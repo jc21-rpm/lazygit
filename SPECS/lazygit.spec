@@ -46,7 +46,7 @@ install -Dm0755 %{_builddir}/bin/%{name} %{buildroot}%{_bindir}/%{name}
 
 %files
 %{_bindir}/%{name}
-%doc %{name}/LICENSE %{name}/*.md %{name}/docs/*.md
+%doc %{name}-%{gh_version}/LICENSE %{name}-%{gh_version}/*.md %{name}-%{gh_version}/docs/*.md
 
 %changelog
 * Mon Jan 21 2019 Jamie Curnow <jc@jc21.com> 0.6.0-1
@@ -76,7 +76,7 @@ install -Dm0755 %{_builddir}/bin/%{name} %{buildroot}%{_bindir}/%{name}
 * Mon Aug 20 2018 Jamie Curnow <jc@jc21.com> 0.1.73-1
 - v0.1.73
 
-* Thu Aug 17 2018 Jamie Curnow <jc@jc21.com> 0.1.64-1
+* Fri Aug 17 2018 Jamie Curnow <jc@jc21.com> 0.1.64-1
 - v0.1.64
 
 * Thu Aug 16 2018 Jamie Curnow <jc@jc21.com> 0.1.61-1
