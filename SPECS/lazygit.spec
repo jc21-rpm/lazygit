@@ -1,9 +1,9 @@
 %define debug_package %{nil}
 
 %global gh_user     jesseduffield
-%global gh_commit   2ca029297ed29d2a6686a7a5ede89c20eb527ac6
+%global gh_commit   c3767bb3b3b330a3fead41c080308ade781fb310
 %global gh_short    %(c=%{gh_commit}; echo ${c:0:7})
-%global gh_version  0.8.1
+%global gh_version  0.8.2
 
 # see https://fedoraproject.org/wiki/PackagingDrafts/Go#Build_ID
 %global _dwz_low_mem_die_limit 0
@@ -49,6 +49,9 @@ install -Dm0755 %{_builddir}/bin/%{name} %{buildroot}%{_bindir}/%{name}
 %doc %{name}-%{gh_version}/LICENSE %{name}-%{gh_version}/*.md %{name}-%{gh_version}/docs/*.md
 
 %changelog
+* Mon Sep 16 2019 Jamie Curnow <jc@jc21.com> 0.8.2-1
+- v0.8.2
+
 * Mon Jun 24 2019 Jamie Curnow <jc@jc21.com> 0.8.1-1
 - v0.8.1
 
