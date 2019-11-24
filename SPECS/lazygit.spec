@@ -3,7 +3,7 @@
 %global gh_user     jesseduffield
 %global gh_commit   30aed94aa8451911fc1c5ba1e52ff28b180a8d31
 %global gh_short    %(c=%{gh_commit}; echo ${c:0:7})
-%global gh_version  0.10.6
+%global gh_version  0.11.2
 
 # see https://fedoraproject.org/wiki/PackagingDrafts/Go#Build_ID
 %global _dwz_low_mem_die_limit 0
@@ -49,6 +49,9 @@ install -Dm0755 %{_builddir}/bin/%{name} %{buildroot}%{_bindir}/%{name}
 %doc %{name}-%{gh_version}/LICENSE %{name}-%{gh_version}/*.md %{name}-%{gh_version}/docs/*.md
 
 %changelog
+* Mon Nov 25 2019 Jamie Curnow <jc@jc21.com> 0.11.2-1
+- v0.11.2
+
 * Thu Nov 14 2019 Jamie Curnow <jc@jc21.com> 0.10.6-1
 - v0.10.6
 
