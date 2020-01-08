@@ -1,9 +1,9 @@
 %define debug_package %{nil}
 
 %global gh_user     jesseduffield
-%global gh_commit   30aed94aa8451911fc1c5ba1e52ff28b180a8d31
+%global gh_commit   79e696d8a747edc3bf1b9ddbd8dcd5038ec7d7ba
 %global gh_short    %(c=%{gh_commit}; echo ${c:0:7})
-%global gh_version  0.11.3
+%global gh_version  0.12.3
 
 # see https://fedoraproject.org/wiki/PackagingDrafts/Go#Build_ID
 %global _dwz_low_mem_die_limit 0
@@ -12,12 +12,13 @@
 %endif
 
 Name:           lazygit
-Version:        0.11.3
+Version:        0.12.3
 Release:        1%{?dist}
 Summary:        A simple terminal UI for git commands, written in Go with the gocui library
 Group:          Applications/System
 License:        MIT
 URL:            https://github.com/%{gh_user}/%{name}
+Source:         wget https://github.com/%{gh_user}/%{name}/archive/v%{gh_version}.tar.gz
 BuildRequires:  git golang
 
 %description
@@ -26,19 +27,16 @@ you're too stubborn to use Sourcetree because you'll never forgive Atlassian
 for making Jira? This is the app for you!
 
 %prep
-wget https://github.com/%{gh_user}/%{name}/archive/v%{gh_version}.tar.gz
-tar xzf v%{gh_version}.tar.gz
+%setup -q -n %{name}-%{version}
 mkdir -p %{_builddir}/src/github.com/%{gh_user}/
 cd %{_builddir}/src/github.com/%{gh_user}/
-ln -snf %{_builddir}/%{name}-%{gh_version} %{name}
-cd %{name}
+ln -snf %{_builddir}/%{name}-%{version} %{name}
 
 %build
 export GOPATH="%{_builddir}"
 export PATH=$PATH:"%{_builddir}"/bin
 cd %{_builddir}/src/github.com/%{gh_user}/%{name}
 export LDFLAGS="${LDFLAGS} -X main.commit=%{gh_short} -X main.date=$(date -u +%Y%m%d.%H%M%%S) -X main.version=%{version}"
-
 %gobuild -o %{_builddir}/bin/%{name}
 
 %install
@@ -46,9 +44,12 @@ install -Dm0755 %{_builddir}/bin/%{name} %{buildroot}%{_bindir}/%{name}
 
 %files
 %{_bindir}/%{name}
-%doc %{name}-%{gh_version}/LICENSE %{name}-%{gh_version}/*.md %{name}-%{gh_version}/docs/*.md
+%doc LICENSE *.md docs/*.md
 
 %changelog
+* Thu Jan 9 2020 Jamie Curnow <jc@jc21.com> 0.12.3-1
+- v0.12.3
+
 * Wed Nov 27 2019 Jamie Curnow <jc@jc21.com> 0.11.3-1
 - v0.11.3
 
