@@ -18,7 +18,7 @@ Summary:        A simple terminal UI for git commands, written in Go with the go
 Group:          Applications/System
 License:        MIT
 URL:            https://github.com/%{gh_user}/%{name}
-Source:         wget https://github.com/%{gh_user}/%{name}/archive/v%{gh_version}.tar.gz
+Source:         https://github.com/%{gh_user}/%{name}/archive/v%{gh_version}.tar.gz
 BuildRequires:  git golang
 
 %description
@@ -50,7 +50,7 @@ install -Dm0755 %{_builddir}/bin/%{name} %{buildroot}%{_bindir}/%{name}
 * Tue Mar 24 2020 Jamie Curnow <jc@jc21.com> 0.17.4-1
 - v0.17.4
 
-* Wed Mar 19 2020 Jamie Curnow <jc@jc21.com> 0.17.0-1
+* Thu Mar 19 2020 Jamie Curnow <jc@jc21.com> 0.17.0-1
 - v0.17.0
 
 * Wed Mar 4 2020 Jamie Curnow <jc@jc21.com> 0.16.0-1
@@ -62,7 +62,7 @@ install -Dm0755 %{_builddir}/bin/%{name} %{buildroot}%{_bindir}/%{name}
 * Wed Feb 26 2020 Jamie Curnow <jc@jc21.com> 0.15.3-1
 - v0.15.3
 
-* Tue Feb 24 2020 Jamie Curnow <jc@jc21.com> 0.15.2-1
+* Mon Feb 24 2020 Jamie Curnow <jc@jc21.com> 0.15.2-1
 - v0.15.2
 
 * Thu Feb 20 2020 Jamie Curnow <jc@jc21.com> 0.14.4-1
