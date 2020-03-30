@@ -27,7 +27,7 @@ you're too stubborn to use Sourcetree because you'll never forgive Atlassian
 for making Jira? This is the app for you!
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q -n %{name}-%{gh_version}
 mkdir -p %{_builddir}/src/github.com/%{gh_user}/
 cd %{_builddir}/src/github.com/%{gh_user}/
 ln -snf %{_builddir}/%{name}-%{version} %{name}
