@@ -1,9 +1,9 @@
 %define debug_package %{nil}
 
 %global gh_user     jesseduffield
-%global gh_commit   cc13ae252a819ae4e36a28c12929bafd43b8ef18
+%global gh_commit   267730bc0059eacd0327eebbaa3b9efd04ee8464
 %global gh_short    %(c=%{gh_commit}; echo ${c:0:7})
-%global gh_version  0.20.2
+%global gh_version  0.20.3
 
 # see https://fedoraproject.org/wiki/PackagingDrafts/Go#Build_ID
 %global _dwz_low_mem_die_limit 0
@@ -41,6 +41,9 @@ install -Dm0755 %{_builddir}/bin/%{name} %{buildroot}%{_bindir}/%{name}
 %doc LICENSE *.md docs/*.md
 
 %changelog
+* Fri May 15 2020 Jamie Curnow <jc@jc21.com> 0.20.3-1
+- v0.20.3
+
 * Thu Apr 23 2020 Jamie Curnow <jc@jc21.com> 0.20.2-1
 - v0.20.2
 
