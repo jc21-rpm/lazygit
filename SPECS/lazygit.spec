@@ -1,9 +1,9 @@
 %define debug_package %{nil}
 
 %global gh_user     jesseduffield
-%global gh_commit   b726dcc770fe90c3a7c9430c6624bfd5b9de68ca
+%global gh_commit   058bcddc53cff6360583cd575fe64da76b53f94b
 %global gh_short    %(c=%{gh_commit}; echo ${c:0:7})
-%global gh_version  0.25
+%global gh_version  0.26.1
 
 # see https://fedoraproject.org/wiki/PackagingDrafts/Go#Build_ID
 %global _dwz_low_mem_die_limit 0
@@ -12,7 +12,7 @@
 %endif
 
 Name:           lazygit
-Version:        0.25.0
+Version:        0.26.1
 Release:        1%{?dist}
 Summary:        A simple terminal UI for git commands, written in Go with the gocui library
 Group:          Applications/System
@@ -41,6 +41,9 @@ install -Dm0755 %{_builddir}/bin/%{name} %{buildroot}%{_bindir}/%{name}
 %doc LICENSE *.md docs/*.md
 
 %changelog
+* Sun Mar 14 2021 Jamie Curnow <jc@jc21.com> 0.26.1-1
+- v0.26.1
+
 * Sat Dec 26 2020 Jamie Curnow <jc@jc21.com> 0.24.2-1
 - v0.24.2
 
