@@ -13,7 +13,7 @@
 
 Name:           lazygit
 Version:        0.31.4
-Release:        1%{?dist}
+Release:        1
 Summary:        A simple terminal UI for git commands, written in Go with the gocui library
 Group:          Applications/System
 License:        MIT
