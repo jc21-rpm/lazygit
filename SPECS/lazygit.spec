@@ -12,8 +12,8 @@
 %endif
 
 Name:           lazygit
-Version:        0.31.4
-Release:        1
+Version:        0.42.0
+Release:        1%{?dist}
 Summary:        A simple terminal UI for git commands, written in Go with the gocui library
 Group:          Applications/System
 License:        MIT
@@ -41,6 +41,9 @@ install -Dm0755 %{_builddir}/bin/%{name} %{buildroot}%{_bindir}/%{name}
 %doc LICENSE *.md docs/*.md
 
 %changelog
+* Tue Jun 25 2024 Jamie Curnow <jc@jc21.com> 0.42.0-1
+- v0.42.0
+
 * Tue Nov 30 2021 Jamie Curnow <jc@jc21.com> 0.31.4-1
 - v0.31.4
 
